@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Converter.cpp" />
+    <ClCompile Include="Option.cpp" />
+    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="Processor.cpp">
+      <Filter>Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="PhaseActionCheck.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Converter.h" />
+    <ClInclude Include="Option.h" />
+    <ClInclude Include="Manager.h" />
+    <ClInclude Include="Keyboard.h">
+      <Filter>Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="Processor.h">
+      <Filter>Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="Phase.h">
+      <Filter>Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="PhaseActionCheck.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Viewer">
+      <UniqueIdentifier>{952835a4-4c9b-476c-91a3-e7a3124fbf0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Processor">
+      <UniqueIdentifier>{0535ae89-9b8b-46c3-92a1-1ca046b0adae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
