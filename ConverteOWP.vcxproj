@@ -30,27 +30,27 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -143,22 +143,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Converter.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="FindFile.cpp" />
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="Option.cpp" />
-    <ClCompile Include="PhaseActionCheck.cpp" />
+    <ClCompile Include="PhaseCommandCheck.cpp" />
+    <ClCompile Include="PhaseFileRead.cpp" />
+    <ClCompile Include="PhaseFileWrite.cpp" />
     <ClCompile Include="Processor.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Converter.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="FindFile.h" />
+    <ClInclude Include="Application.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Manager.h" />
-    <ClInclude Include="Option.h" />
     <ClInclude Include="Phase.h" />
-    <ClInclude Include="PhaseActionCheck.h" />
+    <ClInclude Include="PhaseCommandCheck.h" />
+    <ClInclude Include="PhaseFileRead.h" />
+    <ClInclude Include="PhaseFileWrite.h" />
     <ClInclude Include="Processor.h" />
+    <ClInclude Include="Task.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

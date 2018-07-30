@@ -1,7 +1,11 @@
 #include "Manager.h"
+#include "Application.h"
 
-Manager::Manager( ) :
-_fin( false ) {
+std::shared_ptr< class Manager > Manager::getTask( ) {
+	return std::dynamic_pointer_cast< Manager >( Application::getInstance( )->getTask( getTag( ) ) );
+}
+
+Manager::Manager( ) {
 	_processor = std::shared_ptr< class Processor >( new Processor );
 }
 
@@ -12,10 +16,7 @@ void Manager::update( ) {
 	_processor->update( );
 
 	if ( _processor->isFin( ) ) {
-		_fin = true;
+		std::shared_ptr< class Application > app = Application::getInstance( );
+		app->fin( );
 	}
-}
-
-bool Manager::isFin( ) const {
-	return _fin;
 }

@@ -2,38 +2,99 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Converter.cpp" />
-    <ClCompile Include="Option.cpp" />
-    <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="Keyboard.cpp">
-      <Filter>Processor</Filter>
-    </ClCompile>
     <ClCompile Include="Processor.cpp">
-      <Filter>Processor</Filter>
+      <Filter>Manager\Processor</Filter>
     </ClCompile>
-    <ClCompile Include="PhaseActionCheck.cpp" />
+    <ClCompile Include="PhaseCommandCheck.cpp">
+      <Filter>Manager\Processor\Phase\CommandCheck</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="FindFile.cpp">
+      <Filter>Manager\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="PhaseFileRead.cpp">
+      <Filter>Manager\Processor\Phase\FileRead</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>CommonData</Filter>
+    </ClCompile>
+    <ClCompile Include="PhaseFileWrite.cpp">
+      <Filter>Manager\Processor\Phase\FileWrite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Converter.h" />
-    <ClInclude Include="Option.h" />
-    <ClInclude Include="Manager.h" />
-    <ClInclude Include="Keyboard.h">
-      <Filter>Processor</Filter>
-    </ClInclude>
     <ClInclude Include="Processor.h">
-      <Filter>Processor</Filter>
+      <Filter>Manager\Processor</Filter>
     </ClInclude>
     <ClInclude Include="Phase.h">
-      <Filter>Processor</Filter>
+      <Filter>Manager\Processor\Phase</Filter>
     </ClInclude>
-    <ClInclude Include="PhaseActionCheck.h" />
+    <ClInclude Include="PhaseCommandCheck.h">
+      <Filter>Manager\Processor\Phase\CommandCheck</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>Task</Filter>
+    </ClInclude>
+    <ClInclude Include="FindFile.h">
+      <Filter>Manager\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="PhaseFileRead.h">
+      <Filter>Manager\Processor\Phase\FileRead</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>CommonData</Filter>
+    </ClInclude>
+    <ClInclude Include="PhaseFileWrite.h">
+      <Filter>Manager\Processor\Phase\FileWrite</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Viewer">
+    <Filter Include="Application">
+      <UniqueIdentifier>{353110bf-4ee1-4ad3-bbd5-4cbf4cfbad6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task">
+      <UniqueIdentifier>{c6bc2662-82b0-4465-b277-9e427c32df38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{6db1afc8-f5b6-4003-88a8-85650953ec9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Processor">
+      <UniqueIdentifier>{0535ae89-9b8b-46c3-92a1-1ca046b0adae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Processor\Phase">
+      <UniqueIdentifier>{ca70a57b-57a5-4855-ad73-f352b85dca83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Processor\Phase\CommandCheck">
+      <UniqueIdentifier>{f5f1d0f1-aafc-45dc-8564-b9b6d9aaf644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Viewer">
       <UniqueIdentifier>{952835a4-4c9b-476c-91a3-e7a3124fbf0d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Processor">
-      <UniqueIdentifier>{0535ae89-9b8b-46c3-92a1-1ca046b0adae}</UniqueIdentifier>
+    <Filter Include="Manager\Processor\Phase\FileRead">
+      <UniqueIdentifier>{fd0d1081-d54a-47c6-95f0-8dae4ac5b811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonData">
+      <UniqueIdentifier>{a2c1401c-6c8c-4d46-82d1-173c6213a568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\Processor\Phase\FileWrite">
+      <UniqueIdentifier>{d5db55e3-cb6b-445f-916c-bd743f41fd5a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

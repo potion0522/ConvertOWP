@@ -1,16 +1,14 @@
 #include <memory>
+#include "Application.h"
 #include "Manager.h"
 
 int main( ) {
-	std::shared_ptr< class Manager > manager( new Manager( ) );
+	Application::initialize( );
+	std::shared_ptr< class Application > app = Application::getInstance( );
 
-	while ( true ) {
-		manager->update( );
+	app->addTask( Manager::getTag( ), std::shared_ptr< class Task >( new Manager ) );
 
-		if ( manager->isFin( ) ) {
-			break;
-		}
-	}
-
+	app->run( );
+	Application::finalize( );
     return 0;
 }
