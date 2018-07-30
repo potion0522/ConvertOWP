@@ -20,9 +20,15 @@ std::string File::getName( ) const {
 
 std::string File::getConvertName( ) const {
 	std::string name = _name;
+	// 拡張子を変える
 	int pos = ( int )name.find_last_of( '.' );
 	name = name.substr( 0, pos );
 	name += ".ogg";
+
+	// ファイル名だけにする
+	pos = ( int )name.find_last_of( '/' );
+	name = name.substr( pos + 1, name.length( ) - pos - 1 );
+
 	return name;
 }
 

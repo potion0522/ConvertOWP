@@ -1,7 +1,8 @@
 #include "FindFile.h"
 #include <Windows.h>
 
-const char DIRECTORY[ ] = "./Target";
+const char DIRECTORY[ ] = "Target";
+const char EXTENSION[ ] = ".owp";
 
 FindFile::FindFile( ) {
 }
@@ -28,10 +29,13 @@ void FindFile::findFile( std::string path ) {
 			findFile( path + name );
 		}
 
-		// ファイル名を保存
-		_file.push_back( name );
+		// 拡張子を確認
+		if ( name.find( EXTENSION ) != std::string::npos ) {
+			// ファイル名を保存
+			_file.push_back( path + name );
+		}
 
-	} while ( 1 );
+	} while ( FindNextFile( handle, &find ) );
 }
 
 int FindFile::getFileNum( ) const {

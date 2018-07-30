@@ -1,6 +1,8 @@
 #include "PhaseFileWrite.h"
 #include "File.h"
 
+const char EXPORT_DIRECTORY[ ] = "Export/";
+
 PhaseFileWrite::PhaseFileWrite( std::vector< std::shared_ptr< class File > > &file ) :
 Phase( PHASE_FILE_WRITE ),
 _file( file ) {
@@ -19,8 +21,12 @@ void PhaseFileWrite::update( ) {
 
 void PhaseFileWrite::writeFile( std::shared_ptr< class File > file ) {
 	FILE *fp;
-	if ( fopen_s( &fp, file->getConvertName( ).c_str( ), "wb" ) != 0 ) {
-		return;
+	std::string path;
+	path = path + EXPORT_DIRECTORY + file->getConvertName( ).c_str( );
+	if ( fopen_s( &fp, path.c_str( ), "wb" ) != 0 ) {
+		if ( fopen_s( &fp, ( "../" + path ).c_str( ), "wb" ) ) {
+			return;
+		}
 	}
 
 	const int CHANGE = 0x39;
