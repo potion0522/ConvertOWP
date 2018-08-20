@@ -31,15 +31,14 @@ void PhaseFileRead::readFile( int read_idx ) {
 		return;
 	}
 
-	unsigned char buf[ File::BUF_SIZE ] = { };
 	while ( true ) {
+		unsigned char buf[ File::BUF_SIZE ] = { };
 		int size = ( int )fread_s( buf, File::BUF_SIZE, sizeof( unsigned char ), File::BUF_SIZE, fp );
 		if ( size == 0 ) {
 			break;
 		}
 
 		file->addData( buf, size );
-		memset( buf, 0, File::BUF_SIZE );
 	}
 
 	_file.push_back( file );

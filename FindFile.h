@@ -12,6 +12,7 @@ public:
 
 private:
 	void findFile( std::string path );
+	void error( std::string error, std::string message );
 
 public:
 	int getFileNum( ) const;
