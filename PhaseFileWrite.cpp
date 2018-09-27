@@ -1,5 +1,4 @@
 #include "PhaseFileWrite.h"
-#include "File.h"
 
 const char EXPORT_DIRECTORY[ ] = "Export/";
 

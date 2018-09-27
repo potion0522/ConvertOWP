@@ -1,5 +1,6 @@
 #pragma once
 #include "Phase.h"
+#include "File.h"
 #include <memory>
 #include <vector>
 

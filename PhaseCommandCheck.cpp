@@ -8,7 +8,6 @@ PhaseCommandCheck::PhaseCommandCheck( std::shared_ptr< class FindFile > find_fil
 Phase( PHASE_COMMAND_CHECK ),
 _find_file( find_file ),
 _past_key( '\0' ) {
-	_find_file->load( );
 }
 
 PhaseCommandCheck::~PhaseCommandCheck( ) {
@@ -23,7 +22,8 @@ void PhaseCommandCheck::update( ) {
 	}
 
 	if ( key == ENTER ) {
-		if ( !command( ) ) {
+		if ( command( ) ) {
+			_find_file->load( );
 		}
 	}
 
@@ -33,10 +33,6 @@ void PhaseCommandCheck::update( ) {
 bool PhaseCommandCheck::command( ) {
 	if ( _past_key != YES ) {
 		return false;
-	}
-
-	if ( _find_file->getFileNum( ) < 1 ) {
-		return false;	
 	}
 
 	setNextPhase( PHASE_FILE_READ );

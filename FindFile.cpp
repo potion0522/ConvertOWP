@@ -1,7 +1,7 @@
 #include "FindFile.h"
+
+#include "Error.h"
 #include <Windows.h>
-#include <errno.h>
-#include <assert.h>
 
 const char DIRECTORY[ ] = "Target";
 const char EXTENSION[ ] = ".owp";
@@ -23,11 +23,13 @@ void FindFile::findFile( std::string path ) {
 	path += '/';
 	handle = FindFirstFile( ( path + '*' ).c_str( ), &find );
 
-	bool file_not_found = ( handle != INVALID_HANDLE_VALUE );
-	if ( !file_not_found ) {
-		error( path, "not found" );
+	bool file_not_found = ( handle == INVALID_HANDLE_VALUE );
+	if ( file_not_found ) {
+		std::string error;
+		error += "[ " + path + " ] ";
+		error += "検索元のフォルダーが見つかりません";
+		Error::getTask( )->addErrorLog( error );
 	}
-	assert( file_not_found );
 
 	do {
 		std::string name = find.cFileName;
@@ -44,14 +46,6 @@ void FindFile::findFile( std::string path ) {
 		}
 
 	} while ( FindNextFile( handle, &find ) );
-}
-
-void FindFile::error( std::string error, std::string message ) {
-	FILE *fp;
-	fopen_s( &fp, "error.txt", "w" );
-	fprintf_s( fp, "[ %s ] is %s", error.c_str( ), message.c_str( ) );
-
-	fclose( fp );
 }
 
 int FindFile::getFileNum( ) const {

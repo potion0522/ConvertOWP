@@ -143,23 +143,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="Error.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="FindFile.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="PhaseCommandCheck.cpp" />
     <ClCompile Include="PhaseFileRead.cpp" />
     <ClCompile Include="PhaseFileWrite.cpp" />
     <ClCompile Include="Processor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Console.h" />
+    <ClInclude Include="Error.h" />
     <ClInclude Include="File.h" />
     <ClInclude Include="FindFile.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Keyboard.h" />
-    <ClInclude Include="Manager.h" />
     <ClInclude Include="Phase.h" />
     <ClInclude Include="PhaseCommandCheck.h" />
     <ClInclude Include="PhaseFileRead.h" />

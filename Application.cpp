@@ -9,7 +9,6 @@ const int ESCAPE = 0x1b;
 
 Application::Application( ) :
 _fin( false ) {
-	addTask( Keyboard::getTag( ), std::shared_ptr< class Task >( new Keyboard ) );
 }
 
 Application::~Application( ) {
@@ -32,12 +31,26 @@ void Application::initialize( ) {
 }
 
 void Application::run( ) {
-	std::shared_ptr< class Keyboard > keyboard = Keyboard::getTask( );
+	// initialize
+	for ( std::pair< std::string, std::shared_ptr< class Task > > task : _task ) {
+		task.second->initialize( );
+	}
 
+	// keyborad
+	std::shared_ptr< class Keyboard > keyboard;
+	if ( _task.count( Keyboard::getTag( ) ) < 1 ) {
+		keyboard = std::shared_ptr< Keyboard >( new Keyboard );
+	} else {
+		keyboard = std::dynamic_pointer_cast< Keyboard >( getTask( Keyboard::getTag( ) ) );
+	}
+
+
+	// run process 
 	while ( !_fin ) {
 		for ( std::pair< std::string, std::shared_ptr< class Task > > task : _task ) {
 			task.second->update( );
 		}
+
 		if ( keyboard->getKey( ) == ESCAPE ) {
 			break;
 		}

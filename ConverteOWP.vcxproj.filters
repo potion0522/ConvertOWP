@@ -14,9 +14,6 @@
     <ClCompile Include="Keyboard.cpp">
       <Filter>Task</Filter>
     </ClCompile>
-    <ClCompile Include="Manager.cpp">
-      <Filter>Manager</Filter>
-    </ClCompile>
     <ClCompile Include="FindFile.cpp">
       <Filter>Manager\Processor</Filter>
     </ClCompile>
@@ -29,6 +26,10 @@
     <ClCompile Include="PhaseFileWrite.cpp">
       <Filter>Manager\Processor\Phase\FileWrite</Filter>
     </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Processor.h">
@@ -46,9 +47,6 @@
     <ClInclude Include="Keyboard.h">
       <Filter>Task</Filter>
     </ClInclude>
-    <ClInclude Include="Manager.h">
-      <Filter>Manager</Filter>
-    </ClInclude>
     <ClInclude Include="Task.h">
       <Filter>Task</Filter>
     </ClInclude>
@@ -64,6 +62,10 @@
     <ClInclude Include="PhaseFileWrite.h">
       <Filter>Manager\Processor\Phase\FileWrite</Filter>
     </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Application">
@@ -83,9 +85,6 @@
     </Filter>
     <Filter Include="Manager\Processor\Phase\CommandCheck">
       <UniqueIdentifier>{f5f1d0f1-aafc-45dc-8564-b9b6d9aaf644}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Manager\Viewer">
-      <UniqueIdentifier>{952835a4-4c9b-476c-91a3-e7a3124fbf0d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Manager\Processor\Phase\FileRead">
       <UniqueIdentifier>{fd0d1081-d54a-47c6-95f0-8dae4ac5b811}</UniqueIdentifier>

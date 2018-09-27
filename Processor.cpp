@@ -4,13 +4,21 @@
 #include "PhaseFileRead.h"
 #include "PhaseFileWrite.h"
 
-Processor::Processor( ) :
-_fin( false ) {
-	_find_file = std::shared_ptr< class FindFile >( new FindFile );
-	_phase = std::shared_ptr< class Phase >( new PhaseCommandCheck( _find_file ) );
+#include "Application.h"
+
+std::shared_ptr< class Processor > Processor::getTask( ) {
+	return std::dynamic_pointer_cast< Processor >( Application::getInstance( )->getTask( getTag( ) ) );
+}
+
+Processor::Processor( ) {
 }
 
 Processor::~Processor( ) {
+}
+
+void Processor::initialize( ) {
+	_find_file = std::shared_ptr< class FindFile >( new FindFile );
+	_phase = std::shared_ptr< class Phase >( new PhaseCommandCheck( _find_file ) );
 }
 
 void Processor::update( ) {
@@ -31,19 +39,14 @@ void Processor::changePhase( ) {
 		_phase = std::shared_ptr< class Phase >( new PhaseFileRead( _find_file ) );
 		break;
 
-	case Phase::PHASE_FILE_WRITE:
-		{
+	case Phase::PHASE_FILE_WRITE: {
 			std::shared_ptr< class PhaseFileRead > read = std::dynamic_pointer_cast< PhaseFileRead >( _phase );
 			_phase = std::shared_ptr< class Phase >( new PhaseFileWrite( read->getFileRef( ) ) );
-		}
-		break;
+		} break;
 
 	case Phase::PHASE_END:
-		_fin = true;
+		std::shared_ptr< class Application > app = Application::getInstance( );
+		app->fin( );
 		break;
 	}
-}
-
-bool Processor::isFin( ) const {
-	return _fin;
 }
